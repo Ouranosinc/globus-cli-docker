@@ -15,4 +15,5 @@ GLOBUSWRAPPER_CFG="$HOME/.globus.cfg" globuswrapper endpoint search CaSPAr_reque
 
 
 Reference: https://docs.globus.org/cli/
+
 `globuswrapper`: https://github.com/Ouranosinc/globus-cli-docker/blob/master/globuswrapper
