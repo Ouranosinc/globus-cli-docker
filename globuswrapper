@@ -1,0 +1,14 @@
+#!/bin/sh
+
+if [ -z "$GLOBUSWRAPPER_HOME" ]; then
+    GLOBUSWRAPPER_HOME="$HOME/globuswrapperhome"
+fi
+
+if [ -n "$GLOBUSWRAPPER_CFG" ]; then
+    # For using existing $HOME/.globus.cfg without giving the entire $HOME.
+    VOLUME_MOUNT="--volume $GLOBUSWRAPPER_CFG:/globuswrapperhome/.globus.cfg:ro"
+else
+    VOLUME_MOUNT="--volume $GLOBUSWRAPPER_HOME:/globuswrapperhome:rw"
+fi
+
+docker run --rm $VOLUME_MOUNT --env HOME=/globuswrapperhome pavics/globus-cli:2.0.0-20210224-rc globus "$@"

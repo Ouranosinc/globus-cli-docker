@@ -4,12 +4,15 @@ Globus CLI dockerized: https://hub.docker.com/r/pavics/globus-cli.
 
 ## Sample Usage
 
-```sh
-# Using already existing .globus.cfg.
-docker run --rm -v $HOME/.globus.cfg:/globushome/.globus.cfg:ro -e HOME=/globushome pavics/globus-cli globus --help
+`globuswrapper` is a `docker run` wrapper and can used as drop-in replacement for `globus`.
 
-docker run --rm -v $HOME/.globus.cfg:/globushome/.globus.cfg:ro -e HOME=/globushome pavics/globus-cli globus endpoint search CaSPAr_requests
+```sh
+globuswrapper --help
+
+# Using already existing $HOME/.globus.cfg.
+GLOBUSWRAPPER_CFG="$HOME/.globus.cfg" globuswrapper endpoint search CaSPAr_requests
 ```
 
 
 Reference: https://docs.globus.org/cli/
+`globuswrapper`: https://github.com/Ouranosinc/globus-cli-docker/blob/master/globuswrapper
