@@ -1,5 +1,5 @@
 # globus-cli-docker
-Globus CLI dockerized.
+Globus CLI dockerized: https://hub.docker.com/r/pavics/globus-cli.
 
 
 ## Sample Usage
